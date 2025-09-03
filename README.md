@@ -47,7 +47,7 @@ projeto_churn/
 │   └── risco_por_satisfacao.png
 │
 └── README.md                         # Documentação
-
+````
 ---
 
 ## 🚀 Etapas do Projeto
@@ -78,12 +78,15 @@ ORDER BY ProbCancelamento DESC;
 SELECT AVG(Satisfacao), AVG(QtdCompras), AVG(MesesComoCliente)
 FROM churn_ativos
 WHERE ProbCancelamento >= 0.70;
-
+````
 ## 📊 Visualizações
 Foram criados gráficos em matplotlib (dark mode) para facilitar a análise:
-1.Distribuição da Probabilidade de Cancelamento
-2.Clientes em Risco vs Sem Risco
-3.Risco Médio por Nível de Satisfação
+
+- Distribuição da Probabilidade de Cancelamento
+
+- Clientes em Risco vs Sem Risco
+
+- Risco Médio por Nível de Satisfação
 
 ### Distribuição da Probabilidade de Cancelamento
 ![Distribuição da Probabilidade de Cancelamento](./projeto_churn/hist_probs.png)
@@ -122,6 +125,28 @@ df_ativos = pd.read_csv("clientes_ativos.csv")
 
 # Fazer predição
 previsoes = modelo.predict(df_ativos.drop(columns=["ClienteID"]))
+```
+## 🎯 Possíveis Ações
+
+- Criar campanhas de retenção para clientes em risco.
+
+- Oferecer benefícios exclusivos para clientes antigos.
+
+- Acompanhar métricas de satisfação para identificar sinais precoces de churn.
+
+## 🔮 Melhorias Futuras
+
+- Testar outros algoritmos além de Random Forest (XGBoost, LightGBM).
+
+- Implementar pipeline de atualização automática dos dados.
+
+- Criar dashboard interativo no Power BI ou Streamlit.
+
+## 👩‍💻 Autor
+
+### Projeto desenvolvido por Nicoly Cardoso
+
+### 💼 Focado em Análise e Ciência de Dados | SQL | Python | Power BI
 
 
 
