@@ -1,3 +1,9 @@
+[![Python](https://img.shields.io/badge/Python-3.10+-blue?logo=python&logoColor=white)](#)
+[![Pandas](https://img.shields.io/badge/Pandas-Data%20Analysis-brightgreen)](#)
+[![Matplotlib](https://img.shields.io/badge/Matplotlib-Visuals-orange)](#)
+[![Scikit-Learn](https://img.shields.io/badge/Scikit--Learn-ML-red)](#)
+[![Status](https://img.shields.io/badge/Status-Concluído-success)](#)
+
 # 📊 Predição de Cancelamento de Clientes (Churn Prediction)
 
 Este projeto tem como objetivo **analisar e prever o risco de cancelamento de clientes (Churn)** em uma base fictícia.  
