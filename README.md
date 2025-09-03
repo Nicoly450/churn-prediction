@@ -94,22 +94,34 @@ Foram criados gráficos em matplotlib (dark mode) para facilitar a análise:
 ### Risco Médio por Nível de Satisfação
 ![Risco Médio por Nível de Satisfação](./projeto_churn/risco_por_satisfacao.png)
 
-💡 Insights de Negócio
+## 💡 Insights de Negócio
+- 🔴 **62% dos clientes ativos estão em risco de cancelamento.**  
+- 🟠 **Clientes com satisfação baixa (1 e 2) apresentam risco de até 53%.**  
+- 🟢 **Mesmo clientes com nota máxima de satisfação (5) têm risco acima de 40%, indicando que outros fatores (tempo de cliente, compras, plano contratado) influenciam fortemente.**  
 
-🔴 62% dos clientes ativos estão em risco de cancelamento.
-🟠 Clientes com satisfação baixa (1 e 2) apresentam risco médio de até 53%.
-🟢 Mesmo clientes com nota máxima de satisfação (5) ainda têm risco médio de 42%, mostrando que outros fatores (tempo de cliente, quantidade de compras, plano contratado) influenciam fortemente.
+📌 As variáveis mais importantes no modelo foram:  
+- `QtdCompras`  
+- `MesesComoCliente`  
+- `Idade`  
+- `Satisfacao`  
 
-📌 As variáveis mais importantes no modelo foram:
-• QtdCompras
-• MesesComoCliente
-• Idade
-• Satisfacao
+---
 
-💻 Exemplos de Código
+## 💻 Exemplos de Código  
 
-Predição com modelo salvo
+### Predição com modelo salvo:
+```python
+import joblib
+import pandas as pd
 
+# Carregar modelo treinado
+modelo = joblib.load("modelo_churn.pkl")
+
+# Carregar base de clientes
+df_ativos = pd.read_csv("clientes_ativos.csv")
+
+# Fazer predição
+previsoes = modelo.predict(df_ativos.drop(columns=["ClienteID"]))
 
 
 
