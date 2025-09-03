@@ -27,26 +27,26 @@ Foi criado um pipeline que combina **Machine Learning, SQL e Python (pandas + ma
 ---
 
 ## 📂 Estrutura do Projeto
+
+```bash
 projeto_churn/
 ├── dados/
-│   ├── clientes_ativos.csv              # Base inicial (sem score)
-│   ├── clientes_ativos_com_score.csv    # Base após predição
-│   ├── clientes_churn.csv               # Dados usados no treino
-│   └── clientes_cadastro.csv            # Informações cadastrais
+│   ├── clientes_ativos.csv           # Base inicial (sem score)
+│   ├── clientes_ativos_com_score.csv # Base após predição
+│   ├── clientes_churn.csv            # Dados usados no treino
+│   └── clientes_cadastro.csv         # Cadastro auxiliar
 │
 ├── notebooks/
-│   ├── churn.treino.ipynb               # Treinamento do modelo
-│   ├── clientes.ativos.ipynb            # Aplicação do modelo + análises
-│   └── IA.ipynb                         # Testes gerais
+│   ├── churn.treino.ipynb            # Treinamento do modelo
+│   └── clientes.ativos.ipynb         # Aplicação do modelo + análises
 │
-├── modelo_churn.pkl                     # Modelo treinado salvo
-│
+├── modelo_churn.pkl                  # Modelo treinado salvo
 ├── graficos/
 │   ├── barras_risco.png
 │   ├── hist_probs.png
 │   └── risco_por_satisfacao.png
 │
-└── README.md                            # Documentação
+└── README.md                         # Documentação
 
 ---
 
