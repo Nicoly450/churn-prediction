@@ -152,7 +152,7 @@ previsoes = modelo.predict(df_ativos.drop(columns=["ClienteID"]))
 
 - Criar dashboard interativo no Power BI ou Streamlit.
 
-## 👩‍💻 Autora
+## ✍️ Autora
 
 ### Projeto desenvolvido por Nicoly Cardoso
 
