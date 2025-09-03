@@ -85,6 +85,7 @@ SELECT AVG(Satisfacao), AVG(QtdCompras), AVG(MesesComoCliente)
 FROM churn_ativos
 WHERE ProbCancelamento >= 0.70;
 ````
+
 ## 📊 Visualizações
 Foram criados gráficos em matplotlib (dark mode) para facilitar a análise:
 
@@ -95,13 +96,16 @@ Foram criados gráficos em matplotlib (dark mode) para facilitar a análise:
 - Risco Médio por Nível de Satisfação
 
 ### Distribuição da Probabilidade de Cancelamento
-![Distribuição da Probabilidade de Cancelamento](./projeto_churn/hist_probs.png)
+<p align="center">
+  <img src="./projeto_churn/grafico_probs.png" alt="Distribuição da Probabilidade de Cancelamento" width="500"/>
 
 ### Clientes em Risco vs Sem Risco
-![Clientes em Risco vs Sem Risco](./projeto_churn/barras_risco.png)
-
+<p align="center">
+  <img src="./projeto_churn/barras_risco.png" alt="Clientes em Risco vs Sem Risco" width="500"/>
+  
 ### Risco Médio por Nível de Satisfação
-![Risco Médio por Nível de Satisfação](./projeto_churn/risco_por_satisfacao.png)
+<p align="center">
+  <img src="./projeto_churn/risco_por_satisfacao.png" alt="Risco Médio por Nível de Satisfação" width="500"/>
 
 ## 💡 Insights de Negócio
 - 🔴 **62% dos clientes ativos estão em risco de cancelamento.**  
