@@ -63,6 +63,14 @@ projeto_churn/
 - Métricas avaliadas: **acurácia, recall, precisão**.  
 - Modelo salvo em `modelo_churn.pkl` via `joblib` para reuso.  
 
+### 🔧 Hiperparâmetros do Modelo
+- n_estimators = 400  
+- max_depth = 6  
+- min_samples_split = 10  
+- min_samples_leaf = 3  
+- max_features = 'log2'  
+- class_weight = 'balanced'  
+
 ### 2️⃣ Predição nos Clientes Ativos
 - Base: `clientes_ativos.csv` (sem status de cancelamento).  
 - Após aplicar o modelo, foram geradas as colunas:  
@@ -117,6 +125,19 @@ Foram criados gráficos em matplotlib (dark mode) para facilitar a análise:
 - `MesesComoCliente`  
 - `Idade`  
 - `Satisfacao`  
+
+### 📊 Resultados do Modelo
+
+| Threshold | Precisão (Classe 1) | Recall (Classe 1) | F1-Score (Classe 1) |
+|-----------|---------------------|-------------------|---------------------|
+| 0.3       | 36%                 | 87%               | 59%                 |
+| 0.4       | 45%                 | 87%               | 59%                 |
+| 0.5       | 44%                 | 47%               | 45%                 |
+| 0.6       | 50%                 | 27%               | 34%                 |
+
+🔎 Insight: Thresholds menores aumentam o recall (pegam mais clientes que vão cancelar), 
+mas reduzem a precisão. Isso permite ajustar a estratégia da empresa dependendo da prioridade: 
+**detectar mais churners ou reduzir falsos positivos**.
 
 ---
 
