@@ -63,6 +63,13 @@ projeto_churn/
 - Métricas avaliadas: **acurácia, recall, precisão**.  
 - Modelo salvo em `modelo_churn.pkl` via `joblib` para reuso.  
 
+### 2️⃣ Predição nos Clientes Ativos
+- Base: `clientes_ativos.csv` (sem status de cancelamento).  
+- Após aplicar o modelo, foram geradas as colunas:  
+  - `ProbCancelamento` → probabilidade prevista pelo modelo.  
+  - `Previsto` → 0 = não cancela, 1 = cancela.  
+  - `Risco (>=0.40)` → regra de negócio: clientes acima de 40% de risco são considerados em risco.  
+
 ### 🔧 Hiperparâmetros do Modelo
 - n_estimators = 400  
 - max_depth = 6  
@@ -71,12 +78,10 @@ projeto_churn/
 - max_features = 'log2'  
 - class_weight = 'balanced'  
 
-### 2️⃣ Predição nos Clientes Ativos
-- Base: `clientes_ativos.csv` (sem status de cancelamento).  
-- Após aplicar o modelo, foram geradas as colunas:  
-  - `ProbCancelamento` → probabilidade prevista pelo modelo.  
-  - `Previsto` → 0 = não cancela, 1 = cancela.  
-  - `Risco (>=0.40)` → regra de negócio: clientes acima de 40% de risco são considerados em risco.  
+## 🔄 Exemplo de Pipeline
+Base de dados → Pré-processamento → Treinamento de Modelo → Predição → Relatórios e Visualizações  
+
+📂 Dados → 🧹 Limpeza → 🌲 Random Forest → 📊 Predição → 📈 Visualizações
 
 ### 3️⃣ Análises no SQL
 Exemplo de consultas realizadas:
@@ -138,6 +143,14 @@ Foram criados gráficos em matplotlib (dark mode) para facilitar a análise:
 🔎 Insight: Thresholds menores aumentam o recall (pegam mais clientes que vão cancelar), 
 mas reduzem a precisão. Isso permite ajustar a estratégia da empresa dependendo da prioridade: 
 **detectar mais churners ou reduzir falsos positivos**.
+
+## 📌 Métricas e Business Value
+- **Recall alto** garante que detectamos mais clientes que podem cancelar, permitindo campanhas de retenção.  
+- **Precisão baixa** significa que alguns clientes sem risco podem receber campanhas desnecessárias, gerando custo.  
+
+➡️ Dessa forma, a empresa pode escolher a prioridade:  
+- **Maximizar recall** → detectar mais churners, mesmo com falsos positivos.  
+- **Maximizar precisão** → reduzir falsos positivos, focando em clientes realmente em risco.
 
 ---
 
